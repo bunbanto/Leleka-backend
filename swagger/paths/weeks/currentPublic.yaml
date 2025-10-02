@@ -1,0 +1,25 @@
+tags:
+  - Weeks
+summary: Get current week (public version)
+operationId: getCurrentWeekDataPublic
+description: >
+  Returns data about the current week of pregnancy, including information about baby's development and the mother's feelings. Public endpoint.
+security: []
+responses:
+  '200':
+    description: Success response
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            week:
+              type: integer
+              example: 5
+            daysToDue:
+              type: integer
+              example: 252
+            pack:
+              $ref: '../../components/schemas/pack.yaml#/Pack'
+  '401':
+    $ref: '../../components/responses/401.yaml'

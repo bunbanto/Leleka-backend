@@ -1,0 +1,22 @@
+tags:
+  - Users
+summary: Get current user
+security:
+  - bearerAuth: []
+responses:
+  '200':
+    description: Current user info
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/user.yaml#/User'
+  '401':
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              example: 'Unauthorized'

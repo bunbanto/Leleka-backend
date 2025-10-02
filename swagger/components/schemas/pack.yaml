@@ -1,0 +1,10 @@
+Pack:
+  type: object
+  properties:
+    week:
+      type: integer
+      example: 5
+    baby:
+      $ref: './baby.yaml#/Baby'
+    mom:
+      $ref: './mom.yaml#/Mom'

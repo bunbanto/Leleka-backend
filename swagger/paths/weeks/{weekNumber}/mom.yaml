@@ -1,0 +1,30 @@
+tags:
+  - Weeks
+summary: Get mom data for a specific week
+operationId: getWeekMomData
+description: >
+  Returns information about mother's condition and tips for a given week of pregnancy
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: weekNumber
+    required: true
+    schema:
+      type: integer
+    description: Pregnancy week number
+responses:
+  '200':
+    description: Mom data
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            week:
+              type: integer
+              example: 12
+            mom:
+              $ref: '../../../components/schemas/mom.yaml#/Mom'
+  '401':
+    $ref: '../../../components/responses/401.yaml'

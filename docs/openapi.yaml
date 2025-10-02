@@ -1,0 +1,120 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Leleka App
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: This is a documentation of Leleka App
+
+tags:
+  - name: Auth
+    description: Auth operations
+  - name: Users
+    description: Users operations
+  - name: Diaries
+    description: Diary operations
+  - name: Weeks
+    description: Weeks operations
+  - name: Tasks
+    description: Tasks operations
+
+
+servers:
+  - url: https://gitpub-backend-qq3d.onrender.com
+    description: Production server
+  - url: http://localhost:3000
+    description: Local development server
+
+paths:
+  /api/auth/register:
+    post:
+      $ref: '../swagger/paths/auth/register.yaml'
+  /api/auth/login:
+    post:
+      $ref: '../swagger/paths/auth/login.yaml'
+  /api/auth/logout:
+    post:
+      $ref: ../swagger/paths/auth/logout.yaml
+  /api/auth/refresh:
+    post:
+      $ref: ../swagger/paths/auth/refresh.yaml
+
+ # ======================== User ========================
+  /api/users/me:
+    get:
+      $ref: ../swagger/paths/user/getUser.yaml
+  /api/users/avatar:
+    patch:
+      $ref: ../swagger/paths/user/patchAvatar.yaml
+  /api/users:
+    patch:
+      $ref: ../swagger/paths/user/patchUser.yaml
+
+# ======================== Diary ========================
+  /api/diaries:
+    get:
+      $ref: ../swagger/paths/diary/get.yaml
+    post:
+      $ref: ../swagger/paths/diary/post.yaml
+
+  /api/diaries/{diaryId}:
+    patch:
+      $ref: ../swagger/paths/diary/{id}/patch.yaml
+    delete:
+      $ref: ../swagger/paths/diary/{id}/delete.yaml
+
+# ======================== WEEKS ========================
+
+  /api/weeks/current:
+    get:
+      $ref: ../swagger/paths/weeks/current.yaml
+
+  /api/weeks/current/public:
+    get:
+      $ref: ../swagger/paths/weeks/currentPublic.yaml
+
+  /api/weeks/{weekNumber}:
+    get:
+      $ref: ../swagger/paths/weeks/week.yaml
+
+  /api/weeks/{weekNumber}/mom:
+    get:
+      $ref: ../swagger/paths/weeks/{weekNumber}/mom.yaml
+
+  /api/weeks/{weekNumber}/baby:
+    get:
+      $ref: ../swagger/paths/weeks/{weekNumber}/baby.yaml
+# =========================== Tasks ==========================
+  /api/tasks:
+    get:
+      $ref: ../swagger/paths/tasks/getTask.yaml
+    post:
+      $ref: ../swagger/paths/tasks/postTask.yaml
+
+  /api/tasks/{id}/status:
+    patch:
+      $ref: ../swagger/paths/tasks/{id}/status.yaml
+
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    User:
+      $ref: ../swagger/components/schemas/user.yaml#/User
+    Diary:
+      $ref: ../swagger/components/schemas/diary.yaml#/Diary
+    DiaryUpdate:
+      $ref: ../swagger/components/schemas/diaryUpdate.yaml#/DiaryUpdate
+    Baby:
+      $ref: ../swagger/components/schemas/baby.yaml#/Baby
+    Mom:
+      $ref: ../swagger/components/schemas/mom.yaml#/Mom
+    Pack:
+      $ref: ../swagger/components/schemas/pack.yaml#/Pack
+    Task:
+      $ref: ../swagger/components/schemas/task.yaml#/Task
+

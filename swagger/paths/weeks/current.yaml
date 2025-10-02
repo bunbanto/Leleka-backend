@@ -1,0 +1,39 @@
+tags:
+  - Weeks
+summary: Get current week (private version)
+operationId: getCurrentWeekData
+description: >
+  Returns data about the current week of pregnancy based on the provided due date (dueDate). Authorization is required.
+security:
+  - bearerAuth: []
+parameters:
+  - name: dueDate
+    in: query
+    required: true
+    description: Expected due date (format YYYY-MM-DD)
+    schema:
+      type: string
+      format: date
+      example: 2025-12-19
+responses:
+  '200':
+    description: Success response
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            week:
+              type: integer
+              example: 28
+            daysToDue:
+              type: integer
+              example: 89
+            pack:
+              $ref: '../../components/schemas/pack.yaml#/Pack'
+  '400':
+    $ref: '../../components/responses/400.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'
+  '500':
+    $ref: '../../components/responses/500.yaml'
