@@ -25,7 +25,7 @@ export const startServer = () => {
 
   app.use(
     cors({
-      origin: ['http://localhost:3000', 'https://gitpub-frontend.vercel.app'],
+      origin: ['http://localhost:3000', 'https://leleka-seven.vercel.app'],
       credentials: true,
     }),
   );
