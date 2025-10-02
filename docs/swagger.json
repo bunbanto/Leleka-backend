@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://gitpub-backend-qq3d.onrender.com",
+      "url": "https://leleka-backend-0udd.onrender.com",
       "description": "Production server"
     },
     {
@@ -44,9 +44,7 @@
   "paths": {
     "/api/auth/register": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Register user",
         "operationId": "registerUser",
         "description": "Register a new user",
@@ -57,11 +55,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "name",
-                  "email",
-                  "password"
-                ],
+                "required": ["name", "email", "password"],
                 "properties": {
                   "name": {
                     "type": "string",
@@ -129,9 +123,7 @@
     },
     "/api/auth/login": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Login user",
         "operationId": "loginUser",
         "description": "Login user with email and password",
@@ -142,10 +134,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "email",
-                  "password"
-                ],
+                "required": ["email", "password"],
                 "properties": {
                   "email": {
                     "type": "string",
@@ -199,9 +188,7 @@
     },
     "/api/auth/logout": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Logout user",
         "operationId": "logoutUser",
         "description": "Logout user and clear cookies",
@@ -222,9 +209,7 @@
     },
     "/api/auth/refresh": {
       "post": {
-        "tags": [
-          "Auth"
-        ],
+        "tags": ["Auth"],
         "summary": "Refresh user session",
         "responses": {
           "200": {
@@ -264,9 +249,7 @@
     },
     "/api/users/me": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get current user",
         "security": [
           {
@@ -305,9 +288,7 @@
     },
     "/api/users/avatar": {
       "patch": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update user avatar",
         "security": [
           {
@@ -320,9 +301,7 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "avatar"
-                ],
+                "required": ["avatar"],
                 "properties": {
                   "avatar": {
                     "type": "string",
@@ -387,9 +366,7 @@
     },
     "/api/users": {
       "patch": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update user info",
         "security": [
           {
@@ -454,9 +431,7 @@
     },
     "/api/diaries": {
       "get": {
-        "tags": [
-          "Diaries"
-        ],
+        "tags": ["Diaries"],
         "summary": "Get user diaries",
         "operationId": "getUserDiaries",
         "description": "Returns all diaries for the authenticated user.",
@@ -478,9 +453,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Diaries"
-        ],
+        "tags": ["Diaries"],
         "summary": "Create new diary entry",
         "operationId": "createDiary",
         "security": [
@@ -495,12 +468,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "title",
-                  "description",
-                  "date",
-                  "emotions"
-                ],
+                "required": ["title", "description", "date", "emotions"],
                 "properties": {
                   "title": {
                     "type": "string",
@@ -546,9 +514,7 @@
     },
     "/api/diaries/{diaryId}": {
       "patch": {
-        "tags": [
-          "Diaries"
-        ],
+        "tags": ["Diaries"],
         "summary": "Update diary entry",
         "operationId": "updateDiary",
         "security": [
@@ -580,9 +546,7 @@
                 "title": "Updated entry: Doctors visit",
                 "description": "Added the ultrasound results, doctor said everything looks great!",
                 "date": "2025-09-20",
-                "emotions": [
-                  "6895bd86a5c677999ed2ae27"
-                ]
+                "emotions": ["6895bd86a5c677999ed2ae27"]
               }
             }
           }
@@ -640,9 +604,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Diaries"
-        ],
+        "tags": ["Diaries"],
         "summary": "Delete diary",
         "operationId": "deletedDiary",
         "security": [
@@ -722,9 +684,7 @@
     },
     "/api/weeks/current": {
       "get": {
-        "tags": [
-          "Weeks"
-        ],
+        "tags": ["Weeks"],
         "summary": "Get current week (private version)",
         "operationId": "getCurrentWeekData",
         "description": "Returns data about the current week of pregnancy based on the provided due date (dueDate). Authorization is required.\n",
@@ -784,9 +744,7 @@
     },
     "/api/weeks/current/public": {
       "get": {
-        "tags": [
-          "Weeks"
-        ],
+        "tags": ["Weeks"],
         "summary": "Get current week (public version)",
         "operationId": "getCurrentWeekDataPublic",
         "description": "Returns data about the current week of pregnancy, including information about baby's development and the mother's feelings. Public endpoint.\n",
@@ -823,9 +781,7 @@
     },
     "/api/weeks/{weekNumber}": {
       "get": {
-        "tags": [
-          "Weeks"
-        ],
+        "tags": ["Weeks"],
         "summary": "Get data for a specific week",
         "operationId": "getWeekMomBabyData",
         "description": "Returns detailed information about the baby's development and the mother's condition for a specific week of pregnancy\n",
@@ -885,9 +841,7 @@
     },
     "/api/weeks/{weekNumber}/mom": {
       "get": {
-        "tags": [
-          "Weeks"
-        ],
+        "tags": ["Weeks"],
         "summary": "Get mom data for a specific week",
         "operationId": "getWeekMomData",
         "description": "Returns information about mother's condition and tips for a given week of pregnancy\n",
@@ -935,9 +889,7 @@
     },
     "/api/weeks/{weekNumber}/baby": {
       "get": {
-        "tags": [
-          "Weeks"
-        ],
+        "tags": ["Weeks"],
         "summary": "Get baby data for a specific week",
         "operationId": "getWeekBabyData",
         "description": "Returns information about the baby's development for a given week of pregnancy\n",
@@ -985,9 +937,7 @@
     },
     "/api/tasks": {
       "get": {
-        "tags": [
-          "Tasks"
-        ],
+        "tags": ["Tasks"],
         "summary": "Get list of tasks",
         "operationId": "listTasks",
         "description": "Returns a paginated list of tasks for the authenticated user",
@@ -1002,11 +952,7 @@
             "name": "status",
             "schema": {
               "type": "string",
-              "enum": [
-                "todo",
-                "in_progress",
-                "done"
-              ]
+              "enum": ["todo", "in_progress", "done"]
             },
             "description": "Filter tasks by status"
           },
@@ -1046,9 +992,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Tasks"
-        ],
+        "tags": ["Tasks"],
         "summary": "Create new task",
         "operationId": "createTask",
         "description": "Creates a new task for the authenticated user",
@@ -1086,9 +1030,7 @@
     },
     "/api/tasks/{id}/status": {
       "patch": {
-        "tags": [
-          "Tasks"
-        ],
+        "tags": ["Tasks"],
         "summary": "Update task status",
         "operationId": "updateTaskStatus",
         "description": "Update the status of a specific task",
@@ -1117,11 +1059,7 @@
                 "properties": {
                   "status": {
                     "type": "string",
-                    "enum": [
-                      "todo",
-                      "in_progress",
-                      "done"
-                    ]
+                    "enum": ["todo", "in_progress", "done"]
                   }
                 }
               }
@@ -1179,11 +1117,7 @@
           },
           "gender": {
             "type": "string",
-            "enum": [
-              "хлопчик",
-              "дівчинка",
-              "Оберіть стать"
-            ],
+            "enum": ["хлопчик", "дівчинка", "Оберіть стать"],
             "example": "Оберіть стать"
           },
           "dueDate": {
@@ -1200,21 +1134,11 @@
             "format": "date-time"
           }
         },
-        "required": [
-          "name",
-          "email",
-          "gender"
-        ]
+        "required": ["name", "email", "gender"]
       },
       "Diary": {
         "type": "object",
-        "required": [
-          "_id",
-          "title",
-          "description",
-          "emotions",
-          "userId"
-        ],
+        "required": ["_id", "title", "description", "emotions", "userId"],
         "properties": {
           "_id": {
             "type": "string",
@@ -1399,12 +1323,7 @@
       },
       "Task": {
         "type": "object",
-        "required": [
-          "_id",
-          "owner",
-          "title",
-          "status"
-        ],
+        "required": ["_id", "owner", "title", "status"],
         "properties": {
           "_id": {
             "type": "string",
@@ -1424,11 +1343,7 @@
           },
           "status": {
             "type": "string",
-            "enum": [
-              "todo",
-              "in_progress",
-              "done"
-            ],
+            "enum": ["todo", "in_progress", "done"],
             "example": "in_progress"
           },
           "dueDate": {
@@ -1450,9 +1365,7 @@
       },
       "TaskUpdate": {
         "type": "object",
-        "required": [
-          "title"
-        ],
+        "required": ["title"],
         "properties": {
           "title": {
             "type": "string",
@@ -1464,11 +1377,7 @@
           },
           "status": {
             "type": "string",
-            "enum": [
-              "todo",
-              "in_progress",
-              "done"
-            ]
+            "enum": ["todo", "in_progress", "done"]
           },
           "dueDate": {
             "type": "string",
@@ -1484,11 +1393,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1533,11 +1438,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1583,10 +1484,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message"
-              ],
+              "required": ["status", "message"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1607,11 +1505,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1623,9 +1517,7 @@
                 },
                 "data": {
                   "type": "object",
-                  "required": [
-                    "message"
-                  ],
+                  "required": ["message"],
                   "properties": {
                     "message": {
                       "type": "string",
@@ -1644,11 +1536,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message",
-                "data"
-              ],
+              "required": ["status", "message", "data"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1677,10 +1565,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message"
-              ],
+              "required": ["status", "message"],
               "properties": {
                 "status": {
                   "type": "integer",
@@ -1701,10 +1586,7 @@
           "application/json": {
             "schema": {
               "type": "object",
-              "required": [
-                "status",
-                "message"
-              ],
+              "required": ["status", "message"],
               "properties": {
                 "status": {
                   "type": "integer",

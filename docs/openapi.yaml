@@ -19,9 +19,8 @@ tags:
   - name: Tasks
     description: Tasks operations
 
-
 servers:
-  - url: https://gitpub-backend-qq3d.onrender.com
+  - url: https://leleka-backend-0udd.onrender.com
     description: Production server
   - url: http://localhost:3000
     description: Local development server
@@ -40,7 +39,7 @@ paths:
     post:
       $ref: ../swagger/paths/auth/refresh.yaml
 
- # ======================== User ========================
+  # ======================== User ========================
   /api/users/me:
     get:
       $ref: ../swagger/paths/user/getUser.yaml
@@ -51,7 +50,7 @@ paths:
     patch:
       $ref: ../swagger/paths/user/patchUser.yaml
 
-# ======================== Diary ========================
+  # ======================== Diary ========================
   /api/diaries:
     get:
       $ref: ../swagger/paths/diary/get.yaml
@@ -64,7 +63,7 @@ paths:
     delete:
       $ref: ../swagger/paths/diary/{id}/delete.yaml
 
-# ======================== WEEKS ========================
+  # ======================== WEEKS ========================
 
   /api/weeks/current:
     get:
@@ -85,7 +84,7 @@ paths:
   /api/weeks/{weekNumber}/baby:
     get:
       $ref: ../swagger/paths/weeks/{weekNumber}/baby.yaml
-# =========================== Tasks ==========================
+  # =========================== Tasks ==========================
   /api/tasks:
     get:
       $ref: ../swagger/paths/tasks/getTask.yaml
@@ -95,7 +94,6 @@ paths:
   /api/tasks/{id}/status:
     patch:
       $ref: ../swagger/paths/tasks/{id}/status.yaml
-
 
 components:
   securitySchemes:
@@ -117,4 +115,3 @@ components:
       $ref: ../swagger/components/schemas/pack.yaml#/Pack
     Task:
       $ref: ../swagger/components/schemas/task.yaml#/Task
-

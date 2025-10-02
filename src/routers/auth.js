@@ -6,7 +6,7 @@ import {
   // checkSessionController,
   loginUserController,
   logoutUserController,
-  // refreshUserSessionController,
+  refreshUserSessionController,
   registerUserController,
 } from '../controllers/auth.js';
 
@@ -26,7 +26,7 @@ router.post(
 
 router.post('/logout', ctrlWrapper(logoutUserController));
 
-// router.post('/refresh', ctrlWrapper(refreshUserSessionController));
+router.post('/refresh', ctrlWrapper(refreshUserSessionController));
 
 // router.get('/session', checkSessionController, (req, res) => {
 //   res.status(200).json({
