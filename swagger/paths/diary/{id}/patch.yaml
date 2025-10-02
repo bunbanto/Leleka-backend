@@ -21,11 +21,11 @@ requestBody:
       schema:
         $ref: ../../../components/schemas/diaryUpdate.yaml#/DiaryUpdate
       example:
-        title: "Updated entry: Doctors visit"
-        description: "Added the ultrasound results, doctor said everything looks great!"
-        date: "2025-09-20"
+        title: 'Updated entry: Doctors visit'
+        description: 'Added the ultrasound results, doctor said everything looks great!'
+        date: '2025-09-20'
         emotions:
-          - "6895bd86a5c677999ed2ae27"
+          - '6895bd86a5c677999ed2ae27'
 
 responses:
   '200':
@@ -42,25 +42,25 @@ responses:
               type: string
               example: 'Successfully updated diary!'
             data:
-              $ref: '#/components/schemas/DiaryUpdate'
+              $ref: '../../../components/schemas/diaryUpdate.yaml#/DiaryUpdate'
         example:
           status: 200
           message: 'Successfully updated diary!'
           data:
-            _id: "68cc61d870990cf24572f399"
-            title: "Updated entry: Doctors visit"
-            description: "Added the ultrasound results, doctor said everything looks great!"
+            _id: '68cc61d870990cf24572f399'
+            title: 'Updated entry: Doctors visit'
+            description: 'Added the ultrasound results, doctor said everything looks great!'
             date: '2025-09-20'
             emotions:
               - '6895bd86a5c677999ed2ae27'
               - '6895bd86a5c677999ed2ae16'
-            userId: "68cc619370990cf24572f395"
-            createdAt: "2025-09-19T17:21:36.199Z"
-            updatedAt: "2025-09-19T17:31:10.199Z"
+            userId: '68cc619370990cf24572f395'
+            createdAt: '2025-09-19T17:21:36.199Z'
+            updatedAt: '2025-09-19T17:31:10.199Z'
 
   '401':
     $ref: ../../../components/responses/401.yaml
   '404':
-    $ref: ../../../components/responses/diary/404.yaml
+    $ref: ../../../components/responses/diary/404-2.yaml
   '500':
     $ref: ../../../components/responses/500.yaml

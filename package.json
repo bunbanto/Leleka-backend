@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.2.0",
-    "@redocly/cli": "^2.1.0",
+    "@redocly/cli": "^2.2.3",
     "eslint": "^9.2.0",
     "globals": "^15.1.0",
     "nodemon": "^3.1.10",
@@ -39,6 +39,7 @@
     "multer": "^2.0.2",
     "nodemailer": "^7.0.5",
     "pino-http": "^10.5.0",
+    "redocly": "^1.0.0",
     "swagger-ui-express": "^5.0.1"
   }
 }
